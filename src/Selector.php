@@ -9,7 +9,7 @@
  * Licensed under the MIT license.
  */
 
-namespace WebParser;
+namespace SmartScrapper;
 
 /**
  * Selector
