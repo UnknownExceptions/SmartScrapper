@@ -1,6 +1,12 @@
 {
   "name": "unknown-exceptions/smart-scrapper",
   "description": "A smart PHP web scrapper.",
+  "type": "library",
+  "homepage": "https://github.com/unknown-exceptions/smart-scrapper",
+  "keywords": [
+    "scraper",
+    "parser"
+  ],
   "license": "MIT",
   "authors": [
     {
