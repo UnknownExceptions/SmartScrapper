@@ -1,0 +1,22 @@
+{
+  "name": "unknown-exceptions/smart-scrapper",
+  "description": "A smart PHP web scrapper.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Henrique Dias",
+      "email": "hacdias@gmail.com"
+    },
+    {
+      "name": "Luís Soares",
+      "email": "lsoares@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "fabpot/goutte": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {"SmartScrapper\\": "src"}
+  }
+}
