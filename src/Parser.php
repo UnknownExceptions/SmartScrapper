@@ -45,8 +45,9 @@ class Parser {
 	private function smartSelect( $context, Selector $selector )
 	{
 		try {
-			$el = $context->filter( $selector->getExpression() );
-			return $selector->getAttribute() ? $el->attr( $selector->getAttribute() ) : $el->text();
+			$el	 = $context->filter( $selector->getExpression() );
+			$res = $selector->getAttribute() ? $el->attr( $selector->getAttribute() ) : $el->text();
+			return $res;
 		} catch ( InvalidArgumentException $ex ) {
 			return null;
 		}
@@ -54,8 +55,12 @@ class Parser {
 
 	public function html( $name, $expression )
 	{
-		$el				 = $this->crawler->filter( $expression );
-		$this->{$name}	 = $el->html(); // keep
+		try {
+			$el				 = $this->crawler->filter( $expression );
+			$this->{$name}	 = $el->html(); // keep
+		} catch ( InvalidArgumentException $e ) {
+			$this->{$name} = null;
+		}
 	}
 
 	public function selectList( $name, $expression )
