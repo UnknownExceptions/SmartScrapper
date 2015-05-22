@@ -84,10 +84,8 @@ class Parser {
 		$subSelections	 = array();
 		$childSelectors	 = $this->childSelectors;
 		try {
-			$this->crawler->filter( $this->listExpression )->each( function ( $node ) use (
-			&$subSelections,
-			$childSelectors
-			) {
+			$listSelection = $this->crawler->filter( $this->listExpression );
+			$listSelection->each( function ( $node ) use ( &$subSelections, $childSelectors) {
 				$item = new stdClass();
 				foreach ( $childSelectors as $childSelector ) {
 					$item->{$childSelector->getName()} = $this->smartSelect( $node, $childSelector );
