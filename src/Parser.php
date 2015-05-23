@@ -42,6 +42,16 @@ class Parser
         $this->{$name} = $this->smartSelect($this->crawler, new Selector($name, $expression, $attribute));
     }
 
+    public function saveHtml($name, $expression)
+    {
+        try {
+            $el = $this->crawler->filter($expression);
+            $this->{$name} = $el->html(); // keep
+        } catch (InvalidArgumentException $e) {
+            $this->{$name} = null;
+        }
+    }
+	
     private function smartSelect($context, Selector $selector)
     {
         try {
@@ -50,16 +60,6 @@ class Parser
             return $res;
         } catch (InvalidArgumentException $ex) {
             return null;
-        }
-    }
-
-    public function saveHtml($name, $expression)
-    {
-        try {
-            $el = $this->crawler->filter($expression);
-            $this->{$name} = $el->html(); // keep
-        } catch (InvalidArgumentException $e) {
-            $this->{$name} = null;
         }
     }
 
