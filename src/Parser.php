@@ -25,7 +25,6 @@ class Parser {
 	public $url;
 	// TODO: safe variables
 	private $crawler,
-	$listName,
 	$listExpression,
 	$childSelectors;
 
@@ -36,10 +35,20 @@ class Parser {
 		$this->crawler	 = $client->request( 'GET', $url );
 	}
 
-	public function text( $name, $expression, $attribute = null )
+	public function saveText( $name, $expression, $attribute = null )
 	{
 		// keep
 		$this->{$name} = $this->smartSelect( $this->crawler, new Selector( $name, $expression, $attribute ) );
+	}
+
+	public function saveHtml( $name, $expression )
+	{
+		try {
+			$el				 = $this->crawler->filter( $expression );
+			$this->{$name}	 = $el->html(); // keep
+		} catch ( InvalidArgumentException $e ) {
+			$this->{$name} = null;
+		}
 	}
 
 	private function smartSelect( $context, Selector $selector )
@@ -53,19 +62,8 @@ class Parser {
 		}
 	}
 
-	public function html( $name, $expression )
+	public function at( $expression )
 	{
-		try {
-			$el				 = $this->crawler->filter( $expression );
-			$this->{$name}	 = $el->html(); // keep
-		} catch ( InvalidArgumentException $e ) {
-			$this->{$name} = null;
-		}
-	}
-
-	public function selectList( $name, $expression )
-	{
-		$this->listName			 = $name;
 		$this->listExpression	 = $expression;
 		$this->childSelectors	 = array();
 
@@ -79,7 +77,7 @@ class Parser {
 		return $this;
 	}
 
-	public function save()
+	public function saveList( $listname )
 	{
 		$subSelections	 = array();
 		$childSelectors	 = $this->childSelectors;
@@ -88,14 +86,18 @@ class Parser {
 			$listSelection->each( function ( $node ) use ( &$subSelections, $childSelectors) {
 				$item = new stdClass();
 				foreach ( $childSelectors as $childSelector ) {
-					$item->{$childSelector->getName()} = $this->smartSelect( $node, $childSelector );
+					try {
+						$item->{$childSelector->getName()} = $this->smartSelect( $node, $childSelector );
+					} catch ( InvalidArgumentException $e ) {
+						$item->{$childSelector->getName()} = null;
+					}
 				}
 				array_push( $subSelections, $item );
 			} );
 		} catch ( InvalidArgumentException $e ) {
 			// it will be an empty list
 		}
-		$this->{$this->listName} = $subSelections; // keep
+		$this->{$listname} = $subSelections; // keep
 	}
 
 }
