@@ -1,8 +1,8 @@
 {
-  "name": "unknown-exceptions/smart-scrapper",
+  "name": "refactors/smart-scrapper",
   "description": "A smart PHP web scrapper.",
   "type": "library",
-  "homepage": "https://github.com/unknown-exceptions/smart-scrapper",
+  "homepage": "https://github.com/refactors/smart-scrapper",
   "keywords": [
     "scraper",
     "parser"
