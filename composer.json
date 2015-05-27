@@ -1,8 +1,8 @@
 {
-  "name": "refactors/smart-scrapper",
-  "description": "A smart PHP web scrapper.",
+  "name": "refactors/smart-scraper",
+  "description": "A smart PHP web scraper.",
   "type": "library",
-  "homepage": "https://github.com/refactors/smart-scrapper",
+  "homepage": "https://github.com/refactors/smart-scraper",
   "keywords": [
     "scraper",
     "parser"
@@ -23,6 +23,6 @@
     "fabpot/goutte": "^2.0"
   },
   "autoload": {
-    "psr-4": {"SmartScrapper\\": "src"}
+    "psr-4": {"SmartScraper\\": "src"}
   }
 }
