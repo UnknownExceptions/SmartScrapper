@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the WebParser package.
+ * This file is part of the SmartScraper package.
  *
  * (c) Henrique Dias <hacdias@gmail.com>
  * (c) Luís Soares <lsoares@gmail.com>
@@ -9,7 +9,7 @@
  * Licensed under the MIT license.
  */
 
-namespace SmartScrapper;
+namespace SmartScraper;
 
 /**
  * Selector
