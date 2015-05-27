@@ -1,8 +1,8 @@
-# PHP Smart Scrapper
+# PHP Smart Scraper
 
-[![Latest Stable Version](https://poser.pugx.org/refactors/smart-scrapper/v/stable)](https://packagist.org/packages/refactors/smart-scrapper) 
-[![Total Downloads](https://poser.pugx.org/refactors/smart-scrapper/downloads)](https://packagist.org/packages/refactors/smart-scrapper) [![Latest Unstable Version](https://poser.pugx.org/refactors/smart-scrapper/v/unstable)](https://packagist.org/packages/refactors/smart-scrapper) 
-[![License](https://poser.pugx.org/refactors/smart-scrapper/license)](https://packagist.org/packages/refactors/smart-scrapper)
+[![Latest Stable Version](https://poser.pugx.org/refactors/smart-scraper/v/stable)](https://packagist.org/packages/refactors/smart-scraper) 
+[![Total Downloads](https://poser.pugx.org/refactors/smart-scraper/downloads)](https://packagist.org/packages/refactors/smart-scraper) [![Latest Unstable Version](https://poser.pugx.org/refactors/smart-scraper/v/unstable)](https://packagist.org/packages/refactors/smart-scraper) 
+[![License](https://poser.pugx.org/refactors/smart-scraper/license)](https://packagist.org/packages/refactors/smart-scraper)
 
 Smart Scraper is a PHP scraper to scrape information from web pages. It can help you doing that horrible task in a very easy and smart way.
 
@@ -10,14 +10,14 @@ Smart Scraper is a PHP scraper to scrape information from web pages. It can help
 
 Smart Scrapper needs PHP 5.6.0+ and you can use it via Composer:
 
-```composer require fabpot/goutte```
+```composer require refactores/smart-scraper```
 
 ## Usage
 
-Create a Smart Scrapper instance:
+Create a Smart Scraper instance:
 
 ```php
-$scraper = new SmartScrapper\Parser($theUrlYouWantToScrape);
+$scraper = new SmartScraper\Parser($theUrlYouWantToScrape);
 ```
 Then, if you want to save the text of some selector, you should use:
 
