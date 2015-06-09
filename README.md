@@ -1,8 +1,8 @@
 # PHP Smart Scraper
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/refactors/smart-scraper.svg)](https://packagist.org/packages/refactors/smart-scraper) 
-[![Total Downloads](https://img.shields.io/packagist/dt/refactors/smart-scraper.svg)](https://packagist.org/packages/refactors/smart-scraper) 
-[![License](https://img.shields.io/packagist/l/refactors/smart-scraper.svg)](https://packagist.org/packages/refactors/smart-scraper)
+[![Latest Stable Version](https://img.shields.io/packagist/v/refactors/smart-scraper.svg?style=flat-square)](https://packagist.org/packages/refactors/smart-scraper) 
+[![Total Downloads](https://img.shields.io/packagist/dt/refactors/smart-scraper.svg?style=flat-square)](https://packagist.org/packages/refactors/smart-scraper) 
+[![License](https://img.shields.io/packagist/l/refactors/smart-scraper.svg?style=flat-square)](https://packagist.org/packages/refactors/smart-scraper)
 
 Smart Scraper is a PHP scraper to scrape information from web pages. It can help you doing that horrible task in a very easy and smart way.
 
